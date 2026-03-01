@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* View Transition animations for todo items */
+::view-transition-group(.todo) {
+  animation-duration: 0.3s;
+}
