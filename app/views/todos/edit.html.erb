@@ -1,0 +1,13 @@
+<% turbo_refreshes_with method: :morph, scroll: :preserve %>
+
+<%= turbo_frame_tag dom_id(@todo, :name), class: "flex-1 min-w-0" do %>
+  <%= form_with model: @todo, class: "flex items-center gap-2" do |f| %>
+    <%= f.text_field :name,
+      autofocus: true,
+      class: "flex-1 rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-gray-900 px-3 py-1.5 text-sm" %>
+    <%= f.submit "Save",
+      class: "inline-flex items-center rounded-lg bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-blue-500 transition-colors cursor-pointer" %>
+    <%= link_to "Cancel", todos_path,
+      class: "inline-flex items-center rounded-lg px-3 py-1.5 text-xs font-semibold text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors" %>
+  <% end %>
+<% end %>
